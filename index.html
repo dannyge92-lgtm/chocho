@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chocho Runner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel">
+        <h1>Chocho Runner</h1>
+        <p>Muévete con <kbd>←</kbd> <kbd>→</kbd> o <kbd>A</kbd> <kbd>D</kbd>. Esquiva los bloques rojos y sobrevive.</p>
+        <div class="hud">
+          <span>Puntuación: <strong id="score">0</strong></span>
+          <span>Mejor: <strong id="best-score">0</strong></span>
+        </div>
+        <button id="restart" type="button">Reiniciar</button>
+      </section>
+
+      <section class="game-wrapper">
+        <canvas id="game" width="480" height="640" aria-label="Área de juego"></canvas>
+        <div id="overlay" class="overlay hidden" role="status" aria-live="polite">
+          <p id="message">Perdiste</p>
+          <small>Pulsa reiniciar o la tecla <kbd>R</kbd>.</small>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
