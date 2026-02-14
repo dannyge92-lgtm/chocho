@@ -1,0 +1,125 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f1226;
+  --panel: #1b1f3b;
+  --text: #f3f5ff;
+  --accent: #77f3d0;
+  --danger: #ff5d73;
+  --player: #5ab1ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #1b2155, var(--bg));
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.layout {
+  width: min(980px, 95vw);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(260px, 320px) minmax(320px, 1fr);
+}
+
+.panel {
+  background: color-mix(in srgb, var(--panel) 90%, black 10%);
+  border: 1px solid #2e376f;
+  border-radius: 14px;
+  padding: 1.2rem;
+  align-self: start;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+kbd {
+  background: #20264f;
+  border: 1px solid #3e4ea4;
+  border-radius: 6px;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.9rem;
+}
+
+.hud {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #71ffd8, #47b9ff);
+  color: #10142a;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.06);
+}
+
+.game-wrapper {
+  position: relative;
+}
+
+canvas {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 3 / 4;
+  border: 2px solid #2a3684;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #090c20 0%, #111840 100%);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 14px;
+  background: color-mix(in srgb, #0d1130 72%, black 28%);
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--danger);
+}
+
+.overlay small {
+  color: #b7c2ff;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  canvas {
+    margin-inline: auto;
+    display: block;
+  }
+}
